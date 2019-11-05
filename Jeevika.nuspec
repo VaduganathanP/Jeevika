@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/VaduganathanP/Jeevika/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/VaduganathanP/Jeevika</projectUrl>
+    <iconUrl>https://github.com/VaduganathanP/Jeevika/blob/master/Tamil.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>This is a simple boiler plate application generator. </releaseNotes>
+    <copyright>© Vaduga 2019</copyright>
+    <tags>Asp.Net MVC Framework Application Generator</tags>
+  </metadata>
+</package>
