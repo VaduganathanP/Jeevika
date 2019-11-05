@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -55,7 +55,7 @@ namespace Jeevika
 
             GenerateWebAuthorizationModule(applicationPath);
 
-            //ResetNuget(projectDir, applicationPath);
+            ResetNuget(projectDir, applicationPath);
 
             UpdateProjectFileForGeneratedEntities(applicationPath);
         }

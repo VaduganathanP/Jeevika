@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -211,7 +211,7 @@ namespace Jeevika
                             f.WriteLine("            modelBuilder.Entity<{2}Model>().HasRequired(s => s.{0}).WithMany().HasForeignKey(s => s.{0}Id).WillCascadeOnDelete(false);", relatedMultipleEntity.Name, relatedMultipleEntity.Entity.Name, entity.Name);
                         }
                     }
-                    else if(relatedMultipleEntity.CascadeOnDelete == true && relatedMultipleEntity.IsRequired)
+                    else if (relatedMultipleEntity.CascadeOnDelete == true && relatedMultipleEntity.IsRequired)
                     {
                         if (relatedMultipleEntity.Entity.HasManyEntityOfThisTypeList.Count(o => o.Entity == entity) > 0)
                         {
@@ -240,7 +240,7 @@ namespace Jeevika
                             f.WriteLine("            modelBuilder.Entity<{2}Model>().HasOptional(s => s.{0}).WithMany().HasForeignKey(s => s.{0}Id).WillCascadeOnDelete(false);", relatedMultipleEntity.Name, relatedMultipleEntity.Entity.Name, entity.Name);
                         }
                     }
-                    else if(relatedMultipleEntity.CascadeOnDelete == true && !relatedMultipleEntity.IsRequired)
+                    else if (relatedMultipleEntity.CascadeOnDelete == true && !relatedMultipleEntity.IsRequired)
                     {
                         if (relatedMultipleEntity.Entity.HasManyEntityOfThisTypeList.Count(o => o.Entity == entity) > 0)
                         {

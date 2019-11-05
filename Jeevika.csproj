@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -96,360 +96,128 @@
     <Compile Include="WebAuthorization.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="nuget\nuget.exe">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Content\bootstrap-grid.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Content\bootstrap-grid.min.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Content\bootstrap-reboot.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Content\bootstrap-reboot.min.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Content\bootstrap.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Content\bootstrap.min.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Content\Site.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\favicon.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Images\android-chrome-192x192.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Images\android-chrome-512x512.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Images\apple-touch-icon.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Images\favicon-16x16.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Images\favicon-32x32.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Images\favicon.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\brands.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\brands.min.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\fontawesome-all.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\fontawesome-all.min.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\fontawesome.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\fontawesome.min.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\regular.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\regular.min.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\solid.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\solid.min.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\svg-with-js.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\svg-with-js.min.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\v4-shims.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\v4-shims.min.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\all.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\all.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\brands.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\brands.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\fontawesome.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\fontawesome.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\regular.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\regular.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\solid.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\solid.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\v4-shims.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\v4-shims.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-brands-400.svg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-regular-400.svg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-solid-900.svg">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Jquery.Easing.Mvc\Scripts\jquery.easing.compatibility.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Jquery.Easing.Mvc\Scripts\jquery.easing.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Jquery.Easing.Mvc\Scripts\jquery.easing.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Theme.SBAdmin2.Mvc\Content\sb-admin-2.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Theme.SBAdmin2.Mvc\Content\sb-admin-2.min.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Theme.SBAdmin2.Mvc\Scripts\sb-admin-2.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\PackageManager\Theme.SBAdmin2.Mvc\Scripts\sb-admin-2.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\bootstrap.bundle.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\bootstrap.bundle.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\bootstrap.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\bootstrap.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\esm\popper-utils.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\esm\popper-utils.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\esm\popper.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\esm\popper.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\jquery-3.4.1.intellisense.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\jquery-3.4.1.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\jquery-3.4.1.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\jquery-3.4.1.slim.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\jquery-3.4.1.slim.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\jquery.validate-vsdoc.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\jquery.validate.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\jquery.validate.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\jquery.validate.unobtrusive.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\jquery.validate.unobtrusive.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\modernizr-2.8.3.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\popper-utils.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\popper-utils.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\popper.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\popper.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\umd\popper-utils.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\umd\popper-utils.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\umd\popper.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="StaticFiles\Scripts\umd\popper.min.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="nuget\nuget.exe" />
+    <Content Include="StaticFiles\Content\bootstrap-grid.css" />
+    <Content Include="StaticFiles\Content\bootstrap-grid.min.css" />
+    <Content Include="StaticFiles\Content\bootstrap-reboot.css" />
+    <Content Include="StaticFiles\Content\bootstrap-reboot.min.css" />
+    <Content Include="StaticFiles\Content\bootstrap.css" />
+    <Content Include="StaticFiles\Content\bootstrap.min.css" />
+    <Content Include="StaticFiles\Content\Site.css" />
+    <Content Include="StaticFiles\favicon.ico" />
+    <Content Include="StaticFiles\Images\android-chrome-192x192.png" />
+    <Content Include="StaticFiles\Images\android-chrome-512x512.png" />
+    <Content Include="StaticFiles\Images\apple-touch-icon.png" />
+    <Content Include="StaticFiles\Images\favicon-16x16.png" />
+    <Content Include="StaticFiles\Images\favicon-32x32.png" />
+    <Content Include="StaticFiles\Images\favicon.ico" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\brands.css" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\brands.min.css" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\fontawesome-all.css" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\fontawesome-all.min.css" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\fontawesome.css" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\fontawesome.min.css" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\regular.css" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\regular.min.css" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\solid.css" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\solid.min.css" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\svg-with-js.css" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\svg-with-js.min.css" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\v4-shims.css" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Content\v4-shims.min.css" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\all.js" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\all.min.js" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\brands.js" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\brands.min.js" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\fontawesome.js" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\fontawesome.min.js" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\regular.js" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\regular.min.js" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\solid.js" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\solid.min.js" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\v4-shims.js" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\Scripts\fontawesome\v4-shims.min.js" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-brands-400.svg" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-regular-400.svg" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-solid-900.svg" />
+    <Content Include="StaticFiles\PackageManager\Jquery.Easing.Mvc\Scripts\jquery.easing.compatibility.js" />
+    <Content Include="StaticFiles\PackageManager\Jquery.Easing.Mvc\Scripts\jquery.easing.js" />
+    <Content Include="StaticFiles\PackageManager\Jquery.Easing.Mvc\Scripts\jquery.easing.min.js" />
+    <Content Include="StaticFiles\PackageManager\Theme.SBAdmin2.Mvc\Content\sb-admin-2.css" />
+    <Content Include="StaticFiles\PackageManager\Theme.SBAdmin2.Mvc\Content\sb-admin-2.min.css" />
+    <Content Include="StaticFiles\PackageManager\Theme.SBAdmin2.Mvc\Scripts\sb-admin-2.js" />
+    <Content Include="StaticFiles\PackageManager\Theme.SBAdmin2.Mvc\Scripts\sb-admin-2.min.js" />
+    <Content Include="StaticFiles\Scripts\bootstrap.bundle.js" />
+    <Content Include="StaticFiles\Scripts\bootstrap.bundle.min.js" />
+    <Content Include="StaticFiles\Scripts\bootstrap.js" />
+    <Content Include="StaticFiles\Scripts\bootstrap.min.js" />
+    <Content Include="StaticFiles\Scripts\esm\popper-utils.js" />
+    <Content Include="StaticFiles\Scripts\esm\popper-utils.min.js" />
+    <Content Include="StaticFiles\Scripts\esm\popper.js" />
+    <Content Include="StaticFiles\Scripts\esm\popper.min.js" />
+    <Content Include="StaticFiles\Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="StaticFiles\Scripts\jquery-3.4.1.js" />
+    <Content Include="StaticFiles\Scripts\jquery-3.4.1.min.js" />
+    <Content Include="StaticFiles\Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="StaticFiles\Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="StaticFiles\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="StaticFiles\Scripts\jquery.validate.js" />
+    <Content Include="StaticFiles\Scripts\jquery.validate.min.js" />
+    <Content Include="StaticFiles\Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="StaticFiles\Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="StaticFiles\Scripts\modernizr-2.8.3.js" />
+    <Content Include="StaticFiles\Scripts\popper-utils.js" />
+    <Content Include="StaticFiles\Scripts\popper-utils.min.js" />
+    <Content Include="StaticFiles\Scripts\popper.js" />
+    <Content Include="StaticFiles\Scripts\popper.min.js" />
+    <Content Include="StaticFiles\Scripts\umd\popper-utils.js" />
+    <Content Include="StaticFiles\Scripts\umd\popper-utils.min.js" />
+    <Content Include="StaticFiles\Scripts\umd\popper.js" />
+    <Content Include="StaticFiles\Scripts\umd\popper.min.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PackageManager\Theme.SbAdmin2.Mvc.cs" />
     <Compile Include="PackageManager\Jquery.Easing.Mvc.cs" />
-    <None Include="StaticFiles\Content\bootstrap-grid.css.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Content\bootstrap-grid.min.css.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Content\bootstrap-reboot.css.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Content\bootstrap-reboot.min.css.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Content\bootstrap.css.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Content\bootstrap.min.css.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-brands-400.eot">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-brands-400.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-brands-400.woff">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-brands-400.woff2">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-regular-400.eot">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-regular-400.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-regular-400.woff">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-regular-400.woff2">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-solid-900.eot">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-solid-900.ttf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-solid-900.woff">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-solid-900.woff2">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Scripts\bootstrap.bundle.js.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Scripts\bootstrap.bundle.min.js.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Scripts\bootstrap.js.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Scripts\bootstrap.min.js.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Scripts\esm\popper-utils.js.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Scripts\esm\popper-utils.min.js.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Scripts\esm\popper.js.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Scripts\esm\popper.min.js.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Scripts\jquery-3.4.1.min.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Scripts\jquery-3.4.1.slim.min.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Scripts\popper-utils.js.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Scripts\popper-utils.min.js.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Scripts\popper.js.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Scripts\popper.min.js.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Scripts\README.md">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Scripts\umd\popper-utils.js.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Scripts\umd\popper-utils.min.js.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Scripts\umd\popper.js.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="StaticFiles\Scripts\umd\popper.min.js.map">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="StaticFiles\Content\bootstrap-grid.css.map" />
+    <None Include="StaticFiles\Content\bootstrap-grid.min.css.map" />
+    <None Include="StaticFiles\Content\bootstrap-reboot.css.map" />
+    <None Include="StaticFiles\Content\bootstrap-reboot.min.css.map" />
+    <None Include="StaticFiles\Content\bootstrap.css.map" />
+    <None Include="StaticFiles\Content\bootstrap.min.css.map" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-brands-400.eot" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-brands-400.woff" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-regular-400.eot" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-regular-400.woff" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-solid-900.eot" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-solid-900.woff" />
+    <Content Include="StaticFiles\PackageManager\Font.Awesome\webfonts\fa-solid-900.woff2" />
+    <None Include="StaticFiles\Scripts\bootstrap.bundle.js.map" />
+    <None Include="StaticFiles\Scripts\bootstrap.bundle.min.js.map" />
+    <None Include="StaticFiles\Scripts\bootstrap.js.map" />
+    <None Include="StaticFiles\Scripts\bootstrap.min.js.map" />
+    <None Include="StaticFiles\Scripts\esm\popper-utils.js.map" />
+    <None Include="StaticFiles\Scripts\esm\popper-utils.min.js.map" />
+    <None Include="StaticFiles\Scripts\esm\popper.js.map" />
+    <None Include="StaticFiles\Scripts\esm\popper.min.js.map" />
+    <None Include="StaticFiles\Scripts\jquery-3.4.1.min.map" />
+    <None Include="StaticFiles\Scripts\jquery-3.4.1.slim.min.map" />
+    <None Include="StaticFiles\Scripts\popper-utils.js.map" />
+    <None Include="StaticFiles\Scripts\popper-utils.min.js.map" />
+    <None Include="StaticFiles\Scripts\popper.js.map" />
+    <None Include="StaticFiles\Scripts\popper.min.js.map" />
+    <None Include="StaticFiles\Scripts\README.md" />
+    <None Include="StaticFiles\Scripts\umd\popper-utils.js.map" />
+    <None Include="StaticFiles\Scripts\umd\popper-utils.min.js.map" />
+    <None Include="StaticFiles\Scripts\umd\popper.js.map" />
+    <None Include="StaticFiles\Scripts\umd\popper.min.js.map" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="StaticFiles\Scripts\index.d.ts">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="StaticFiles\Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
@@ -461,4 +229,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>xcopy "$(ProjectDir)nuget\*"  "$(ProjectDir)$(OutDir)nuget\*" /Y /I /E 
+copy "$(ProjectDir)StaticFiles\favicon.ico"  "$(ProjectDir)$(OutDir)StaticFiles\favicon.ico"
+xcopy "$(ProjectDir)StaticFiles\Content\*"  "$(ProjectDir)$(OutDir)StaticFiles\Content\*" /Y /I /E
+xcopy "$(ProjectDir)StaticFiles\Images\*"  "$(ProjectDir)$(OutDir)StaticFiles\Images\*" /Y /I /E
+xcopy "$(ProjectDir)StaticFiles\PackageManager\*"  "$(ProjectDir)$(OutDir)StaticFiles\PackageManager\*" /Y /I /E
+xcopy "$(ProjectDir)StaticFiles\Scripts\*"  "$(ProjectDir)$(OutDir)StaticFiles\Scripts\*" /Y /I /E</PreBuildEvent>
+  </PropertyGroup>
 </Project>
