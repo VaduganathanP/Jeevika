@@ -10,8 +10,46 @@
     {
         static void Main(string[] args)
         {
-            Project project = new Project() { Name = "AppCodeGenerator", Description = "App Code Generator" };
-            Application application = project.AddApplication(new Application() { Name = "AppCodeGenerator", DisplayName = "App Code Generator" });
+            //Include nuget package Jeevika
+            //We will create a simple school management with otion to add students and Grade or Section
+            Project project = new Project() { Name = "SchoolManagement", Description = "A simple school management" };
+            Application application = project.AddApplication(new Application() { Name = "SchoolManagement", DisplayName= "School Management" });
+
+            //Add Student Entity
+            Entity studentEntity = application.AddEntity(new Entity() { Name = "Student", DisplayName = "Student", DisplayInDashBoardMenu = false });
+            studentEntity.AddProperty(new Property()
+            {
+                Name = "Name",
+                DisplayName = "Student Name",
+                IsRequired = true,
+                IsVisibleInListingScreen = true,
+                VariableType = eVariableType.STRING
+            });
+            studentEntity.AddProperty(new Property()
+            {
+                Name = "Age",
+                DisplayName = "Age",
+                IsRequired = true,
+                IsVisibleInListingScreen = true,
+                VariableType = eVariableType.INT
+            });
+
+            //Ok lets create Grade entity
+            Entity gradeEntity = application.AddEntity(new Entity() { Name = "Grade", DisplayName = "Grade", DisplayInDashBoardMenu = true });
+            gradeEntity.AddProperty(new Property()
+            {
+                Name = "Name",
+                DisplayName = "Grade Name",
+                IsRequired = true,
+                IsVisibleInListingScreen = true,
+                VariableType = eVariableType.STRING
+            });
+
+            //Now we will crate relation, one grade may contain multiple students
+            //Maintain same name as provided to student entity
+            gradeEntity.HasMany(new RelatedEntity() { Name = "Student", DisplayName = "Student", Entity = studentEntity, IsHidden = true });
+
+            
             project.Generate();
         }
     }
