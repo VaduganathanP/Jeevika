@@ -1,6 +1,6 @@
 # Jeevika
 .Net Framework MVC Application Generator
-## Usage
+## Usage https://youtu.be/Ut2BsBPVVhw
 1. Using Visual Studio create a console application with .Net Framework 4.7.2
 2. Install nuget package https://www.nuget.org/packages/Jeevika
 3. In <b>Program.cs</b> try the below code which will generate a blank application
