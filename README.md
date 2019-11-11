@@ -54,7 +54,7 @@
         }
     }
 ```
-4. The generated code will be available in <b>bin/Debug/AppData/AppCodeGenerator</b> folder. Here AppCodeGenerator is the application name provided in Program.cs.
+4. The generated code will be available in <b>bin/Debug/AppData/SchoolManagement</b> folder. Here SchoolManagement is the application name provided in Program.cs.
 5. Default admin username and password is "vaduga@outlook.com" "#123Vaduga". You can change this as your wish in generated application "Model/ApplicationDbInitializer.cs" file.
 6. Application generated uses EntityFramework codefirst, so database will be generated on the first login in <b>localdb</b>. You can man modify connection string in web.config file.
 
