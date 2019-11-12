@@ -64,14 +64,16 @@
         {
             int order = 0;
 
-            Project project = new Project() { Name = "AppCodeGenerator", Description = "App Code Generator" };
-            Application application = project.AddApplication(new Application() { Name = "AppCodeGenerator", DisplayName = "App Code Generator" });
+            Project project = new Project() { Name = "ACG", Description = "App Code Generator" };
+            Application application = project.AddApplication(new Application() { Name = "ACG", DisplayName = "App Code Generator", IsDebugMode = true });
 
             order = 0;
             Entity variableTypeEntity = application.AddEntity(new Entity() { Name = "VariableType", DisplayName = "Variable Type", DisplayInDashBoardMenu = true });
+            variableTypeEntity.AddProperty(new Property() { Name = "Name", DisplayName = "Name", VariableType = eVariableType.ALPHA_NUMERIC_STRING, IsRequired = true, IsVisibleInListingScreen = true, Order = order++ });
 
             order = 0;
-            Entity relatedEntityEntity = application.AddEntity(new Entity() { Name = "RelatedEntity", DisplayName = "Related Entity", DisplayInDashBoardMenu = true });
+            Entity relatedEntityEntity = application.AddEntity(new Entity() { Name = "RelatedEntity", DisplayName = "Related Entity", DisplayInDashBoardMenu = false });
+            relatedEntityEntity.AddProperty(new Property() { Name = "Name", DisplayName = "Name", VariableType = eVariableType.ALPHA_NUMERIC_STRING, IsRequired = true, IsVisibleInListingScreen = true, Order = order++ });
             relatedEntityEntity.AddProperty(new Property() { Name = "DisplayName", DisplayName = "Display Name", VariableType = eVariableType.STRING, IsRequired = true, IsVisibleInListingScreen = true, Order = order++ });
             relatedEntityEntity.AddProperty(new Property() { Name = "IsRequired", DisplayName = "Is Required", VariableType = eVariableType.BOOL, IsRequired = true, DefaultValue = "false", IsVisibleInListingScreen = true, Order = order++ });
             relatedEntityEntity.AddProperty(new Property() { Name = "IsVisibleInListingScreen", DisplayName = "Visible in listing screen", VariableType = eVariableType.BOOL, DefaultValue = "true", IsVisibleInListingScreen = true, Order = order++ });
@@ -81,20 +83,8 @@
             relatedEntityEntity.AddProperty(new Property() { Name = "DefaultValue", DisplayName = "Default Value", VariableType = eVariableType.STRING, IsVisibleInListingScreen = true, Order = order++ });
 
             order = 0;
-            Entity defaultPropertyEntity = application.AddEntity(new Entity() { Name = "DefaultProperty", DisplayName = "Property", DisplayInDashBoardMenu = false });
-            defaultPropertyEntity.AddProperty(new Property() { Name = "DisplayName", DisplayName = "Display Name", VariableType = eVariableType.STRING, IsRequired = true, IsVisibleInListingScreen = true, Order = order++ });
-            defaultPropertyEntity.AddProperty(new Property() { Name = "IsRequired", DisplayName = "Is Required", VariableType = eVariableType.BOOL, IsRequired = true, DefaultValue = "false", IsVisibleInListingScreen = true, Order = order++ });
-            defaultPropertyEntity.AddProperty(new Property() { Name = "IsVisibleInListingScreen", DisplayName = "Visible in listing screen", VariableType = eVariableType.BOOL, DefaultValue = "false", IsVisibleInListingScreen = true, Order = order++ });
-            defaultPropertyEntity.AddProperty(new Property() { Name = "DefaultValue", DisplayName = "Default Value", VariableType = eVariableType.STRING, IsRequired = false, IsVisibleInListingScreen = false, Order = order++ });
-            defaultPropertyEntity.AddProperty(new Property() { Name = "Order", DisplayName = "Order", VariableType = eVariableType.INT, IsRequired = true, IsVisibleInListingScreen = true, Order = order++ });
-
-            defaultPropertyEntity.HasForeignKeyOF(new RelatedEntity() { Name = "VariableType", DisplayName = "Variable Type", Entity = variableTypeEntity, IsVisibleInListingScreen = true, IsRequired = true });
-
-            defaultPropertyEntity.HasMany(new RelatedEntity() { Name = "DefaultPropertyForeignKeyRelation", DisplayName = "Foreign Key Relation", Entity = relatedEntityEntity, IsVisibleInListingScreen = false, IsRequired = false, CascadeOnDelete = false, IsHidden = true });
-            defaultPropertyEntity.HasMany(new RelatedEntity() { Name = "DefaultPropertyHasManyRelation", DisplayName = "Has Many Relation", Entity = relatedEntityEntity, IsVisibleInListingScreen = false, IsRequired = false, CascadeOnDelete = false, IsHidden = true });
-
-            order = 0;
             Entity propertyEntity = application.AddEntity(new Entity() { Name = "Property", DisplayName = "Property", DisplayInDashBoardMenu = false });
+            propertyEntity.AddProperty(new Property() { Name = "Name", DisplayName = "Name", VariableType = eVariableType.ALPHA_NUMERIC_STRING, IsRequired = true, IsVisibleInListingScreen = true, Order = order++ });
             propertyEntity.AddProperty(new Property() { Name = "DisplayName", DisplayName = "Display Name", VariableType = eVariableType.STRING, IsRequired = true, IsVisibleInListingScreen = true, Order = order++ });
             propertyEntity.AddProperty(new Property() { Name = "IsRequired", DisplayName = "Is Required", VariableType = eVariableType.BOOL, IsRequired = true, DefaultValue = "false", IsVisibleInListingScreen = true, Order = order++ });
             propertyEntity.AddProperty(new Property() { Name = "IsVisibleInListingScreen", DisplayName = "Visible in listing screen", VariableType = eVariableType.BOOL, DefaultValue = "false", IsVisibleInListingScreen = true, Order = order++ });
@@ -103,31 +93,34 @@
 
             propertyEntity.HasForeignKeyOF(new RelatedEntity() { Name = "VariableType", DisplayName = "Variable Type", Entity = variableTypeEntity, IsVisibleInListingScreen = true, IsRequired = true });
 
-            propertyEntity.HasMany(new RelatedEntity() { Name = "ForeignKeyRelation", DisplayName = "Foreign Key Relation", Entity = relatedEntityEntity, IsVisibleInListingScreen = false, IsRequired = false, CascadeOnDelete = false, IsHidden = true });
-            propertyEntity.HasMany(new RelatedEntity() { Name = "HasManyRelation", DisplayName = "Has Many Relation", Entity = relatedEntityEntity, IsVisibleInListingScreen = false, IsRequired = false, CascadeOnDelete = false, IsHidden = true });
-
             order = 0;
             Entity propertyGroupEntity = application.AddEntity(new Entity() { Name = "PropertyGroup", DisplayName = "Property Group", DisplayInDashBoardMenu = false });
+            propertyGroupEntity.AddProperty(new Property() { Name = "Name", DisplayName = "Name", VariableType = eVariableType.ALPHA_NUMERIC_STRING, IsRequired = true, IsVisibleInListingScreen = true, Order = order++ });
             propertyGroupEntity.AddProperty(new Property() { Name = "Order", DisplayName = "Order", VariableType = eVariableType.INT, IsRequired = true, IsVisibleInListingScreen = true, Order = order++ });
 
             propertyGroupEntity.HasMany(new RelatedEntity() { Name = "Property", DisplayName = "Property", Entity = propertyEntity, IsRequired = false, IsHidden = true, CascadeOnDelete = false });
+            propertyGroupEntity.HasMany(new RelatedEntity() { Name = "ForeignKeyRelation", DisplayName = "Foreign Key Relation", Entity = relatedEntityEntity, IsVisibleInListingScreen = false, IsRequired = false, CascadeOnDelete = false, IsHidden = true });
+            propertyGroupEntity.HasMany(new RelatedEntity() { Name = "HasManyRelation", DisplayName = "Has Many Relation", Entity = relatedEntityEntity, IsVisibleInListingScreen = false, IsRequired = false, CascadeOnDelete = false, IsHidden = true });
 
             order = 0;
-            Entity entityEntity = application.AddEntity(new Entity() { Name = "Entity", DisplayName = "Entity", DisplayInDashBoardMenu = false });
+            Entity entityEntity = application.AddEntity(new Entity() { Name = "ProjectEntity", DisplayName = "Entity", DisplayInDashBoardMenu = false });
+            entityEntity.AddProperty(new Property() { Name = "Name", DisplayName = "Name", VariableType = eVariableType.ALPHA_NUMERIC_STRING, IsRequired = true, IsVisibleInListingScreen = true, Order = order++ });
             entityEntity.AddProperty(new Property() { Name = "DisplayName", DisplayName = "Display Name", VariableType = eVariableType.STRING, IsRequired = true, IsVisibleInListingScreen = true, Order = order++ });
             entityEntity.AddProperty(new Property() { Name = "DisplayInDashBoardMenu", DisplayName = "Display In DashBoard Menu", VariableType = eVariableType.BOOL, IsRequired = true, DefaultValue = "false", IsVisibleInListingScreen = true, Order = order++ });
             entityEntity.AddProperty(new Property() { Name = "IsRelationShipTable", DisplayName = "Is RelationShipTable", VariableType = eVariableType.BOOL, IsRequired = true, DefaultValue = "false", IsVisibleInListingScreen = true, Order = order++ });
             entityEntity.AddProperty(new Property() { Name = "IsViewRequired", DisplayName = "Is View Required", VariableType = eVariableType.BOOL, IsRequired = true, DefaultValue = "true", IsVisibleInListingScreen = false, Order = order++ });
+            entityEntity.AddProperty(new Property() { Name = "DisplayInAllEntity", DisplayName = "Display In All Entities", VariableType = eVariableType.BOOL, IsRequired = true, DefaultValue = "false", IsVisibleInListingScreen = false, Order = order++ });
             entityEntity.AddProperty(new Property() { Name = "Order", DisplayName = "Order", VariableType = eVariableType.INT, IsRequired = true, IsVisibleInListingScreen = true, Order = order++ });
 
             entityEntity.HasMany(new RelatedEntity() { Name = "PropertyGroup", DisplayName = "Property Group", Entity = propertyGroupEntity, IsRequired = true, IsHidden = true });
-            entityEntity.HasMany(new RelatedEntity() { Name = "DefaultProperty", DisplayName = "Property", Entity = propertyEntity, IsRequired = false, IsHidden = true });
 
             relatedEntityEntity.HasForeignKeyOF(new RelatedEntity() { Name = "Entity", DisplayName = "Entity", Entity = entityEntity, IsVisibleInListingScreen = true, IsRequired = true, CascadeOnDelete = false });
 
             order = 0;
             Entity projectEntity = application.AddEntity(new Entity() { Name = "Project", DisplayName = "Project", DisplayInDashBoardMenu = true });
+            projectEntity.AddProperty(new Property() { Name = "Name", DisplayName = "Name", VariableType = eVariableType.ALPHA_NUMERIC_STRING, IsRequired = true, IsVisibleInListingScreen = true, Order = order++ });
             projectEntity.AddProperty(new Property() { Name = "DisplayName", DisplayName = "Display Name", VariableType = eVariableType.STRING, IsRequired = true, IsVisibleInListingScreen = true, Order = order++ });
+            projectEntity.AddProperty(new Property() { Name = "IsDebugMode", DisplayName = "Is Debug Mode", VariableType = eVariableType.BOOL, IsRequired = true, DefaultValue = "false", IsVisibleInListingScreen = true, Order = order++ });
             projectEntity.HasMany(new RelatedEntity() { Name = "Entity", DisplayName = "Entity", Entity = entityEntity, IsRequired = false, IsHidden = true });
 
             project.Generate();

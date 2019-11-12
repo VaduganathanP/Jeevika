@@ -158,6 +158,7 @@ namespace Jeevika
             f.WriteLine("using System.Threading.Tasks;", "");
             f.WriteLine("using System.Web;", "");
             f.WriteLine("using System.Web.Mvc;", "");
+            f.WriteLine("using Migrations;", "");
             f.WriteLine("", "");
             f.WriteLine("namespace {0}.Models", application.Name);
             f.WriteLine("{{", "");
@@ -166,7 +167,8 @@ namespace Jeevika
             f.WriteLine("        public ApplicationDbContext()", "");
             f.WriteLine("            : base(\"DefaultConnection\", throwIfV1Schema: false)", "");
             f.WriteLine("        {{", "");
-            f.WriteLine("            Database.SetInitializer(new ApplicationDbInitializer());", "");
+            //f.WriteLine("            Database.SetInitializer(new ApplicationDbInitializer());", "");
+            f.WriteLine("            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, ApplicationDbInitializer>());", "");
             f.WriteLine("		}}", "");
             f.WriteLine("", "");
             f.WriteLine("        public static ApplicationDbContext Create()", "");
@@ -199,7 +201,7 @@ namespace Jeevika
                 {
                     if (relatedMultipleEntity.CascadeOnDelete == false && relatedMultipleEntity.IsRequired)
                     {
-                        if (relatedMultipleEntity.Entity.HasManyEntityOfThisTypeList.Count(o => o.Entity == entity) > 0)
+                        if (relatedMultipleEntity.Entity.HasManyEntityOfThisTypeList.Count(o => o.Entity == entity && o.ShowInTab) > 0)
                         {
                             if (relatedMultipleEntity.Name == relatedMultipleEntity.Entity.Name)
                                 f.WriteLine("            modelBuilder.Entity<{2}Model>().HasRequired(s => s.{0}).WithMany(s => s.{2}s).HasForeignKey(s => s.{0}Id).WillCascadeOnDelete(false);", relatedMultipleEntity.Name, relatedMultipleEntity.Entity.Name, entity.Name);
@@ -213,7 +215,7 @@ namespace Jeevika
                     }
                     else if (relatedMultipleEntity.CascadeOnDelete == true && relatedMultipleEntity.IsRequired)
                     {
-                        if (relatedMultipleEntity.Entity.HasManyEntityOfThisTypeList.Count(o => o.Entity == entity) > 0)
+                        if (relatedMultipleEntity.Entity.HasManyEntityOfThisTypeList.Count(o => o.Entity == entity && o.ShowInTab) > 0)
                         {
                             if (relatedMultipleEntity.Name == relatedMultipleEntity.Entity.Name)
                                 f.WriteLine("            modelBuilder.Entity<{2}Model>().HasRequired(s => s.{0}).WithMany(s => s.{2}s).HasForeignKey(s => s.{0}Id).WillCascadeOnDelete(true);", relatedMultipleEntity.Name, relatedMultipleEntity.Entity.Name, entity.Name);
@@ -228,7 +230,7 @@ namespace Jeevika
 
                     if (relatedMultipleEntity.CascadeOnDelete == false && !relatedMultipleEntity.IsRequired)
                     {
-                        if (relatedMultipleEntity.Entity.HasManyEntityOfThisTypeList.Count(o => o.Entity == entity) > 0)
+                        if (relatedMultipleEntity.Entity.HasManyEntityOfThisTypeList.Count(o => o.Entity == entity && o.ShowInTab) > 0)
                         {
                             if (relatedMultipleEntity.Name == relatedMultipleEntity.Entity.Name)
                                 f.WriteLine("            modelBuilder.Entity<{2}Model>().HasOptional(s => s.{0}).WithMany(s => s.{2}s).HasForeignKey(s => s.{0}Id).WillCascadeOnDelete(false);", relatedMultipleEntity.Name, relatedMultipleEntity.Entity.Name, entity.Name);
@@ -242,7 +244,7 @@ namespace Jeevika
                     }
                     else if (relatedMultipleEntity.CascadeOnDelete == true && !relatedMultipleEntity.IsRequired)
                     {
-                        if (relatedMultipleEntity.Entity.HasManyEntityOfThisTypeList.Count(o => o.Entity == entity) > 0)
+                        if (relatedMultipleEntity.Entity.HasManyEntityOfThisTypeList.Count(o => o.Entity == entity && o.ShowInTab) > 0)
                         {
                             if (relatedMultipleEntity.Name == relatedMultipleEntity.Entity.Name)
                                 f.WriteLine("            modelBuilder.Entity<{2}Model>().HasOptional(s => s.{0}).WithMany(s => s.{2}s).HasForeignKey(s => s.{0}Id).WillCascadeOnDelete(true);", relatedMultipleEntity.Name, relatedMultipleEntity.Entity.Name, entity.Name);
@@ -283,11 +285,18 @@ namespace Jeevika
             f.WriteLine("using System.Data.Entity;", "");
             f.WriteLine("using System.Linq;", "");
             f.WriteLine("using System.Web;", "");
+            f.WriteLine("using System.Data.Entity.Migrations;", "");
+            f.WriteLine("using {0}.Models;", application.Name);
+
             f.WriteLine("", "");
-            f.WriteLine("namespace {0}.Models", application.Name);
+            f.WriteLine("namespace Migrations", "");
             f.WriteLine("{{", "");
-            f.WriteLine("    public class ApplicationDbInitializer : DropCreateDatabaseIfModelChanges<ApplicationDbContext>", "");
+            f.WriteLine("    public class ApplicationDbInitializer : DbMigrationsConfiguration<ApplicationDbContext>", "");
             f.WriteLine("    {{", "");
+            f.WriteLine("        public ApplicationDbInitializer()", "");
+            f.WriteLine("        {{", "");
+            f.WriteLine("            AutomaticMigrationsEnabled = true;", "");
+            f.WriteLine("        }}", "");
             f.WriteLine("        protected override void Seed(ApplicationDbContext context)", "");
             f.WriteLine("        {{", "");
             f.WriteLine("			 var store = new RoleStore<IdentityRole>(context);", "");

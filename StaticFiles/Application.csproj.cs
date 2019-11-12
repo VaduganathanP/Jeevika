@@ -204,8 +204,6 @@ namespace Jeevika.StaticFiles
             f.WriteLine("    <Content Include=\"Views\\_ViewStart.cshtml\" />", "");
             f.WriteLine("    <Content Include=\"Views\\Shared\\Error.cshtml\" />", "");
             f.WriteLine("    <Content Include=\"Views\\Shared\\_Layout.cshtml\" />", "");
-            f.WriteLine("    <Content Include=\"Views\\Home\\About.cshtml\" />", "");
-            f.WriteLine("    <Content Include=\"Views\\Home\\Contact.cshtml\" />", "");
             f.WriteLine("    <Content Include=\"Views\\Home\\Index.cshtml\" />", "");
             f.WriteLine("    <Content Include=\"Scripts\\umd\\popper.min.js.map\" />", "");
             f.WriteLine("    <Content Include=\"Scripts\\umd\\popper.js.map\" />", "");

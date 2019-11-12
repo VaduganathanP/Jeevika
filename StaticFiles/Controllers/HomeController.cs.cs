@@ -19,7 +19,10 @@ namespace Jeevika.StaticFiles.Controllers
             f.WriteLine("", "");
             f.WriteLine("namespace {0}.Controllers", application.Name);
             f.WriteLine("{{", "");
-            f.WriteLine("    [Authorize]");
+            if (!application.IsDebugMode)
+            {
+                f.WriteLine("    [Authorize]");
+            }
             f.WriteLine("    public class HomeController : Controller", "");
             f.WriteLine("    {{", "");
             f.WriteLine("        public ActionResult Index()", "");

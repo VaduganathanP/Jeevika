@@ -13,6 +13,7 @@ namespace Jeevika
     {
         public string Name { get; set; }
         public string DisplayName { get; set; }
+        public bool IsDebugMode { get; set; } = false;
         public List<Entity> Entities { get; set; } = new List<Entity>();
         public List<Entity> CommonEntities { get; set; } = new List<Entity>();
         public Entity AddEntity(Entity model)

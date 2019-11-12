@@ -44,12 +44,16 @@ namespace Jeevika
         public void HasForeignKeyOF(RelatedEntity relatedEntity)
         {
             ForeignKeyEntities.Add(relatedEntity);
+
+            if (relatedEntity.Entity.HasManyEntityOfThisTypeList.Count(o => o.Name == this.Name) > 0)
+                return;
+
+            relatedEntity.Entity.HasManyEntityOfThisTypeList.Add(new RelatedEntity() { Name = this.Name, DisplayName = this.DisplayName, Entity = this, ShowInTab = false });
         }
 
         public void HasMany(RelatedEntity relatedEntity)
         {
             HasManyEntityOfThisTypeList.Add(relatedEntity);
-
             if (relatedEntity.Entity.HasManyEntityOfThisTypeList.Count(o => o.Name == this.Name) == 1)
                 return;
 

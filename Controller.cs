@@ -25,7 +25,10 @@ namespace Jeevika
             f.WriteLine("using System.Web.Mvc;");
             f.WriteLine("namespace {0}.Controllers", application.Name);
             f.WriteLine("{");
-            f.WriteLine("    [Authorize]");
+            if (!application.IsDebugMode)
+            {
+                f.WriteLine("    [Authorize]");
+            }
             f.WriteLine("    public class {0}Controller : BaseController", entity.Name);
             f.WriteLine("    {");
             f.WriteLine("        public ActionResult Index()");
@@ -114,6 +117,8 @@ namespace Jeevika
             }
             foreach (RelatedEntity relatedEntity in entity.HasManyEntityOfThisTypeList)
             {
+                if (!relatedEntity.ShowInTab)
+                    continue;
                 if (relatedEntity.Entity.HasManyEntityOfThisTypeList.Where(o => o.Entity == entity).Count() > 0)
                 {
                     f.WriteLine("            db.Entry({0}).Collection(s => s.{1}s).Load();", entity.Name.ToLower(), relatedEntity.Name);
@@ -133,6 +138,9 @@ namespace Jeevika
             f.WriteLine("");
             foreach (RelatedEntity relatedEntity in entity.HasManyEntityOfThisTypeList)
             {
+                if (!relatedEntity.ShowInTab)
+                    continue;
+
                 f.WriteLine("        [HttpPost]", "");
                 f.WriteLine("        public ActionResult Add{0}s(List<Guid> {1}IdList, Guid {2}Id)", relatedEntity.Name, relatedEntity.Entity.Name.ToLower(), entity.Name.ToLower());
                 f.WriteLine("        {{", "");
@@ -554,7 +562,10 @@ namespace Jeevika
             f.WriteLine("", "");
             f.WriteLine("namespace {0}.Controllers", application.Name);
             f.WriteLine("{{", "");
-            f.WriteLine("    [Authorize]", "");
+            if (!application.IsDebugMode)
+            {
+                f.WriteLine("    [Authorize]");
+            }
             f.WriteLine("    public class FileController : BaseController", "");
             f.WriteLine("    {{", "");
             f.WriteLine("        [HttpGet]", "");

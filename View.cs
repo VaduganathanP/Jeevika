@@ -811,6 +811,8 @@ namespace Jeevika
             f.WriteLine("                            <a class=\"nav-item nav-link active\" id=\"nav-detail-tab\" data-toggle=\"tab\" href=\"#nav-detail\" role=\"tab\" aria-controls=\"nav-home\" aria-selected=\"true\">Detail</a>", "");
             foreach (var relatedEntity in entity.HasManyEntityOfThisTypeList)
             {
+                if (!relatedEntity.ShowInTab)
+                    continue;
                 f.WriteLine("                            <a class=\"nav-item nav-link\" id=\"nav-{1}-tab\" data-toggle=\"tab\" href=\"#nav-{1}\" role=\"tab\" aria-controls=\"nav-{1}\" aria-selected=\"false\">{2} <span class=\"badge badge-primary\" id=\"{1}Count\">@ViewBag.{0}Count</span></a>", relatedEntity.Name, relatedEntity.Name.ToLower(), relatedEntity.DisplayName);
             }
             f.WriteLine("                        </div>", "");
@@ -951,6 +953,8 @@ namespace Jeevika
             f.WriteLine("                        </div>", "");
             foreach (var relatedEntity in entity.HasManyEntityOfThisTypeList)
             {
+                if (!relatedEntity.ShowInTab)
+                    continue;
                 f.WriteLine("                        <div class=\"tab-pane fade\" id=\"nav-{0}\" role=\"tabpanel\" aria-labelledby=\"nav-{0}-tab\">", relatedEntity.Name.ToLower());
                 f.WriteLine("                            <div class=\"d-flex mt-md-2\">", "");
                 f.WriteLine("                                <div class=\"ml-auto\">", "");
@@ -1013,6 +1017,8 @@ namespace Jeevika
             f.WriteLine("", "");
             foreach (var relatedEntity in entity.HasManyEntityOfThisTypeList)
             {
+                if (!relatedEntity.ShowInTab)
+                    continue;
                 if (relatedEntity.Entity.HasManyEntityOfThisTypeList.Where(o => o.Entity == entity).Count() > 0)
                 {
                     f.WriteLine("<div id=\"Add{0}Model\" class=\"modal fade\">", relatedEntity.Entity.Name);
@@ -1132,6 +1138,8 @@ namespace Jeevika
 
             foreach (var relatedEntity in entity.HasManyEntityOfThisTypeList)
             {
+                if (!relatedEntity.ShowInTab)
+                    continue;
                 f.WriteLine("    <script>", "");
                 f.WriteLine("    var {0}Table = null;", relatedEntity.Name.ToLower());
                 f.WriteLine("    $(\"#nav-{0}-tab\").click(function () {{", relatedEntity.Name.ToLower());
@@ -1217,7 +1225,7 @@ namespace Jeevika
                 f.WriteLine("                    }}", "");
                 f.WriteLine("                    var row = {0}Table.row($(this).parents('tr'));", relatedEntity.Name.ToLower());
                 f.WriteLine("                    var request = window.location.href;", "");
-                f.WriteLine("                    var jqxhr = $.post(\"/{0}/Remove{4}\", {{ {3}Id: data[0], {1}Id: '@Model.Id' }}, function (result) {{", entity.Name, entity.Name.ToLower(), relatedEntity.Entity.Name, relatedEntity.Entity.Name.ToLower(), relatedEntity.Name);
+                f.WriteLine("                    var jqxhr = $.post(\"/{0}/Remove{4}\", {{ {3}Id: data[0], {1}Id: '@Model.Id' }}, function (result) {{", entity.Name, entity.Name.ToLower(), relatedEntity.Entity.Name, relatedEntity.Name.ToLower(), relatedEntity.Name);
                 f.WriteLine("                        row.remove().draw();", "");
                 f.WriteLine("                        $(\"#{0}Count\").html({0}Table.rows().count());", relatedEntity.Name.ToLower());
                 f.WriteLine("                    }})", "");
